@@ -12,8 +12,8 @@ class Pet(models.Model):
     sex = models.CharField(max_length=1, choices=SEX_CHOICES, null=False, blank=False)
     breed = models.CharField(max_length=50)
     microchip_num = models.CharField(max_length=100)
-    microchip_location = models.Charfield()
-    coat_color = models.CharField()
+    microchip_location = models.CharField(max_length=150)
+    coat_color = models.CharField(max_length=50)
     dob = models.DateField()
 
 
@@ -23,7 +23,7 @@ class Client(models.Model):
     email = models.EmailField()
     address = models.CharField(max_length=250)
     join_date = models.DateTimeField(auto_now_add=True)
-    pets = models.ManyToManyField(Pet, on_delete=models.CASCADE) # one client can have many pets and one pet can belong to several clients
+    pets = models.ManyToManyField(Pet) # one client can have many pets and one pet can belong to several clients
 
 
 class Specialist(models.Model):
@@ -33,9 +33,9 @@ class Specialist(models.Model):
 
 
 class Appointment(models.Model):
-    client = models.ForeignKey(Client, null=False)
-    pet = models.ForeignKey(Pet)
-    specialist = models.ForeignKey(Specialist, null=False)
+    client = models.ForeignKey(Client, null=True, on_delete=models.SET_NULL)
+    pet = models.ForeignKey(Pet, null=True, on_delete=models.SET_NULL)
+    specialist = models.ForeignKey(Specialist, null=True, on_delete=models.SET_NULL)
     date_time = models.DateTimeField(null=False)
     created = models.DateTimeField(auto_now_add=True)
     reason = models.TextField()
