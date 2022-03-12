@@ -1,4 +1,3 @@
-from pyexpat import model
 from rest_framework import serializers
 from .models import Client, Pet, Specialist, Appointment
 
@@ -24,8 +23,15 @@ class SpecialistSerializer(serializers.ModelSerializer):
 
 class AppointmentSerializer(serializers.ModelSerializer):
 
+    def validate(self, data):
+        data = super().validate(data)
+        client = data.get('client')
+        pet = data.get('pet')
+        if pet not in client.pets.all():
+            raise serializers.ValidationError("The pet must belong to the Client!")
+        return data
+
     class Meta:
         model = Appointment
-        fields = '__all__'
-
+        fields = '__all__'        
 
