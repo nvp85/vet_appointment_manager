@@ -17,5 +17,17 @@ class SpecialistViewSet(viewsets.ModelViewSet):
     serializer_class = SpecialistSerializer
 
 class AppointmentViewSet(viewsets.ModelViewSet):
-    queryset = Appointment.objects.all().order_by('date_time')
     serializer_class = AppointmentSerializer
+
+    def get_queryset(self):
+        queryset = Appointment.objects.all().order_by('date_time')
+        client_id = self.request.query_params.get('client_id')
+        if client_id is not None:
+            queryset = queryset.filter(client__id=int(client_id))
+        specialist_id = self.request.query_params.get('specialist_id')
+        if specialist_id is not None:
+            queryset = queryset.filter(specialist__id=int(specialist_id))
+        pet_id = self.request.query_params.get('pet_id')
+        if pet_id is not None:
+            queryset = queryset.filter(pet__id=int(pet_id))
+        return queryset

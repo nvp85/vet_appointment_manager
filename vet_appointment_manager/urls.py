@@ -21,8 +21,8 @@ from rest_framework import routers
 router = routers.DefaultRouter()
 router.register(r'clients', views.ClientViewSet)
 router.register(r'pets', views.PetViewSet)
-router.register(r'specialists',views.SpecialistViewSet)
-router.register(r'appointments', views.AppointmentViewSet)
+router.register(r'specialists', views.SpecialistViewSet)
+router.register(r'appointments', views.AppointmentViewSet, basename='appointments')
 
 
 urlpatterns = [
