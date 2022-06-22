@@ -40,3 +40,13 @@ psycopg2 2.9.3
 
 ### Launch
 
+Prerequisites: python 3.7+, git, Postgresql 13+ running on the port 5432 (default port).
+
+To run this project locally implement following:
+
+* Clone the repository
+* Set up virtual environment
+* Install requirements.txt
+* Create a database
+* Generate a new secret key and put it in .env file
+* Start the development server
