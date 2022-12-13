@@ -21,6 +21,8 @@ jobs:
 
     # The runner environment to use
     runs-on: ubuntu-latest
+    env:
+      SECRET_KEY: &t4-wb^s*)4l3vs(&qd5=26r3c^1qph)2s!2muv6we9)u5z5op
 
     # Steps mostly contain CLI commands (via "run") and actions (via "uses")
     # Each step begins with a hyphen -
