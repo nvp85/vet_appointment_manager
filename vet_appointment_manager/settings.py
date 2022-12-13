@@ -97,6 +97,9 @@ if os.getenv('GITHUB_WORKFLOW'):
             'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
             'HOST': os.getenv('POSTGRES_HOST'),
             'PORT': os.getenv('POSTGRES_PORT'),
+            'TEST': {
+                'NAME': 'test_db',
+            },
         }
     }
 else:
