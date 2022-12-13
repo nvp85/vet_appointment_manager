@@ -29,7 +29,7 @@ jobs:
         env:
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-          POSTGRES_NAME: github-actions
+          POSTGRES_DB: github-actions
           POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
         ports:
