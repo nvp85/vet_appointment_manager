@@ -32,6 +32,8 @@ jobs:
           POSTGRES_NAME: github-actions
           POSTGRES_HOST: postgres
           POSTGRES_PORT: 5432
+        ports:
+          - 5432:5432
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
