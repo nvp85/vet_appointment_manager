@@ -48,6 +48,8 @@ jobs:
      
       # Runs database migrations on the Django app
       - name: Run migrations
+        env:
+        SECRET_KEY: &t4-wb^s*)4l3vs(&qd5=26r3c^1qph)2s!2muv6we9)u5z5op
         run: python manage.py migrate
       
       # Run all tests with verbose flag
