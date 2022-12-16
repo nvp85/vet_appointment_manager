@@ -4,7 +4,7 @@
 ### Introduction
 
 This is a learning project I made during Nucamp coding bootcamp course "Modern Software Engineering with DevOps".
-It's an API of a simplified appointment manager for an imaginary veterinary clinic created with Django REST framework and Postgresql.
+It's a simplified appointment manager with API for an imaginary veterinary clinic created with Django REST framework and Postgresql.
 
 ### General Info
 
