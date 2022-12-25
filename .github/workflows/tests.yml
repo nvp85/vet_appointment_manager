@@ -1,4 +1,4 @@
-name: Vet_appt Pipeline (Nucamp template)
+name: Vet_appt test Pipeline (Nucamp template)
 
 # Set up how the workflow is triggered
 on:
