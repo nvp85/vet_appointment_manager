@@ -3,8 +3,7 @@
 
 ### Introduction
 
-This is a learning project I made during Nucamp coding bootcamp course "Modern Software Engineering with DevOps".
-It's a simplified appointment manager with API for an imaginary veterinary clinic created with Django REST framework and Postgresql.
+This is a learning project developed as part of the Nucamp coding bootcamp course "Modern Software Engineering with DevOps". It's a simplified appointment manager API for an imaginary veterinary clinic, built with Django REST framework and Postgresql. Its functionality allows to store and manipulate basic information about the clinic staff, clients, and pets, as well as book or cancel appointments. 
 
 ### General Info
 
@@ -17,7 +16,7 @@ API end-points:
 |/pets/:id |GET, PATCH, DELETE | get a pet by id, update a pet by id, delete a pet by id|
 |/specialists/ |GET, POST|get a list of specialists, add a new specialist|
 |/specialists/:id |GET, PATCH, DELETE|get a specialist by id, update a specialist by id, delete a specialist by id|
-|/appointments/|GET, POST|get a list of appointments, add a new appintment|
+|/appointments/|GET, POST|get a list of appointments, add a new appointment |
 |/appontments/:id |GET, PATCH, DELETE|get an appointment by id, update an appointment by id, delete an appointment by id|
 
 ### Technologies
@@ -36,7 +35,7 @@ psycopg2 2.9.3
 
 Prerequisites: python 3.7+, git, Postgresql 13+ running on the port 5432 (default port).
 
-To run this project locally implement following:
+To run this project locally implement the following:
 
 * Clone the repository
 ```
@@ -56,7 +55,7 @@ $ pip install -r requirements.txt
 $ psql -U postgres
 postgres=# CREATE DATABASE appointment_manager
 ```
-* Create .env file and put your postgres credentials in it. Exemplary content of an .env file:
+* Create .env file and put your Postgres credentials in it. Exemplary content of an .env file:
 ```
 # Database Settings
 DB_NAME=appointment_manager
